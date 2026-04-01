@@ -1,0 +1,7 @@
+# Data -- don't track raw data or very large datasets
+
+data/raw/*
+data/prototype/raw/*
+data/clean/prism_*
+data/clean/drought_*
+data/shapefiles/*

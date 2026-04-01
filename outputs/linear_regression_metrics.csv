@@ -1,0 +1,7 @@
+model,evaluation_set,feature_set,rmse,mae,r2
+linear_regression,corn_belt_cv,climate_only,32.23117673896968,25.431893313211873,0.04506516629112434
+linear_regression,corn_belt_cv,climate_plus_drought,31.069175018456974,24.665310110130836,0.11268629245033737
+linear_regression,great_plains_transfer,climate_only,49.473251763242544,41.35439918657236,-0.21441687294498912
+linear_regression,great_plains_transfer,climate_plus_drought,51.4680474691759,43.02202428604236,-0.3143234764495393
+linear_regression,gp_to_cb_transfer,climate_only,39.04200997096955,32.513666915601306,-0.39979750516429813
+linear_regression,gp_to_cb_transfer,climate_plus_drought,38.974048395475236,32.47673511391223,-0.3949284093378984

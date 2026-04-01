@@ -1,0 +1,7 @@
+model,evaluation_set,feature_set,rmse,mae,r2
+gradient_boost,corn_belt_cv,climate_only,29.158640045296853,22.97846378182782,0.21857381765229156
+gradient_boost,corn_belt_cv,climate_plus_drought,27.722386256999567,21.929985736317484,0.29375737370220323
+gradient_boost,great_plains_transfer,climate_only,50.14234761069131,40.14762300040659,-0.2474875104270633
+gradient_boost,great_plains_transfer,climate_plus_drought,51.48923655543458,41.61820005302653,-0.31540589739152636
+gradient_boost,gp_to_cb_transfer,climate_only,31.70389978400404,25.058305227856483,0.07694782041612014
+gradient_boost,gp_to_cb_transfer,climate_plus_drought,31.51686901739487,25.173044139616632,0.08780641718095006
