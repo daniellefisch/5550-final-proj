@@ -2,14 +2,16 @@
 ### Evaluating Predictive Robustness and Regional Differences
 
 **Danielle Fischer**
+
 DSAN5550 - Data Science for Climate Change
+
 Georgetown University
 
 ## Repo Structure
 
 Start with: `notebooks/final_pipeline.ipynb`
 
-This notebook walks through the full and most final pipeling, using all of the data for data prep, modeling, and evaluation. 
+This notebook walks through the full and most recent final pipeling, using all of the data for data prep, modeling, and evaluation. 
 
 The repository is organized into four main components:
 ### `data/`
@@ -35,9 +37,9 @@ Contains all data processing and modeling scripts:
 
 This project investigates how climate stressors affect county-level corn yields across the United States, with a focus on:
 
-    - identifying key environmental drivers of yield variability
-    - evaluating how predictive models perform under different climate conditions
-    - assessing whether models trained in one region of the US generalize to another
+- identifying key environmental drivers of yield variability
+- evaluating how predictive models perform under different climate conditions
+- assessing whether models trained in one region of the US generalize to another
 
 The project specifically compares the **Corn Belt** and **Great Plains** regions to understand:
 
