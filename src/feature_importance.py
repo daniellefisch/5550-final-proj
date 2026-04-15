@@ -1,3 +1,36 @@
+'''
+compute and compare permutation-based feature importance for corn yield prediction.
+
+this script trains Random Forest models on two regions:
+- Corn Belt
+- Great Plains
+
+using a shared feature set:
+- prism_tmax_may_sep_mean
+- prism_ppt_may_sep_total
+- drought_freq_d2plus
+- drought_intensity_d2plus
+
+for each trained model, permutation importance is computed in two settings:
+- within-region evaluation (train and test on the same region)
+- cross-region evaluation (train on one region, evaluate on the other)
+
+this allows comparison of how feature importance changes depending on:
+1. where the model is trained
+2. where the model is evaluated
+
+permutation importance is computed using R^2 as the scoring metric and
+multiple random shuffles to estimate both mean importance and variability.
+
+outputs:
+- feature_importance_comparison.csv:
+    has feature importance (mean and standard deviation) for each
+    combination of training region and evaluation region
+
+the Random Forest model uses a fixed hyperparameter configuration
+(n_estimators=200, max_depth=10, etc.) for reproducibility.
+'''
+
 from __future__ import annotations
 
 from pathlib import Path

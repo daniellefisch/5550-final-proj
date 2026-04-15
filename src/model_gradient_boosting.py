@@ -1,3 +1,35 @@
+'''
+train and evaluate a Gradient Boosting model for county-level corn yield prediction.
+
+this script compares two feature sets:
+1. climate only:
+   - prism_tmax_may_sep_mean
+   - prism_ppt_may_sep_total
+2. climate plus drought:
+   - prism_tmax_may_sep_mean
+   - prism_ppt_may_sep_total
+   - drought_freq_d2plus
+   - drought_intensity_d2plus
+
+the model is evaluated across three settings:
+- 5-fold cross-validation within the Corn Belt
+- cross-region transfer:
+    train on Corn Belt → test on Great Plains
+    train on Great Plains → test on Corn Belt
+
+in addition to performance metrics (RMSE, MAE, R2), the script computes
+and saves feature importances for each evaluation setting.
+
+model uses a fixed GradientBoostingRegressor configuration
+(n_estimators=200, learning_rate=0.05, max_depth=3, etc.) for reproducibility.
+
+outputs:
+- gradient_boost_metrics.csv: model performance across all settings
+- gradient_boost_feature_importances.csv: feature importance values
+- gradient_boost_transfer_predictions.csv: preds for CB to GP transfer
+- gradient_boost_gp_to_cb_transfer_predictions.csv: preds for GP to CB transfer
+'''
+
 from __future__ import annotations
 
 import pandas as pd

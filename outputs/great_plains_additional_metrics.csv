@@ -1,0 +1,5 @@
+model,evaluation_set,feature_set,rmse,mae,r2
+linear_regression,great_plains_cv,climate_only,43.30898636840319,35.5144371611838,0.069001829514665
+linear_regression,great_plains_cv,climate_plus_drought,43.28006330408144,35.56923117852971,0.07023782171642581
+gradient_boost,great_plains_cv,climate_only,37.144104836758615,29.525940051119157,0.3151549511102091
+gradient_boost,great_plains_cv,climate_plus_drought,36.659624937700755,29.235398386790585,0.3329384503050695

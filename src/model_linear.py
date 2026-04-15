@@ -1,3 +1,10 @@
+'''
+train and evaluate a linear regression model for county-level corn yield prediction
+compares two feature sets: climate only, climate plus drought
+evaluated with 5 fold cross validation within the corn belt region, transfer from corn belt to great plains, transfer from great plains to corn belt
+outputs: csv file of evaluation metrics, csv file of model coefficients, csv files of transfer predictions
+'''
+
 from __future__ import annotations
 
 import pandas as pd
@@ -73,6 +80,13 @@ def evaluate_transfer(X_train, y_train, X_test, y_test):
 
 
 def main():
+    '''
+    run the full linear regression workflow
+    load cleaned dataset, split into corn belt and great plains, define climate only and climate plus drought feature sets,
+        evaluate within region using corn belt cross validation, evaluate cross region transfer in both directions,
+        save metrics, coeficients, and prediction outputs to csv files
+    '''
+
     df = pd.read_csv(DATA_PATH)
 
     # split by region

@@ -1,3 +1,33 @@
+'''
+train and evaluate a random forest model for county-level corn yield prediction.
+
+this script compares two feature sets:
+1. climate only:
+   - prism_tmax_may_sep_mean
+   - prism_ppt_may_sep_total
+2. climate plus drought:
+   - prism_tmax_may_sep_mean
+   - prism_ppt_may_sep_total
+   - drought_freq_d2plus
+   - drought_intensity_d2plus
+
+model is evaluated across three settings:
+- 5-fold cross-validation within the Corn Belt
+- 5-fold cross-validation within the Great Plains
+- cross-region transfer:
+    train on Corn Belt, test on Great Plains
+    train on Great Plains,  test on Corn Belt
+
+in addition to performance metrics (RMSE, MAE, R2), the script computes
+and saves feature importances for each evaluation setting.
+
+outputs:
+- random_forest_metrics.csv: model performance across all settings
+- random_forest_feature_importances.csv: feature importance values
+- random_forest_cb_to_gp_transfer_predictions.csv: pred for CB → GP transfer
+- random_forest_gp_to_cb_transfer_predictions.csv: pred for GP → CB transfer
+'''
+
 from __future__ import annotations
 
 import pandas as pd
