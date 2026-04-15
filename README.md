@@ -11,7 +11,7 @@ Georgetown University
 
 Start with: `notebooks/final_pipeline.ipynb`
 
-This notebook walks through the full and most recent final pipeling, using all of the data for data prep, modeling, and evaluation. 
+This notebook walks through nearly the full pipeline, going through all of the data and including most of the main analysis. The poster (in the repo as a PDF) has the final information. 
 
 The repository is organized into four main components:
 ### `data/`
@@ -21,17 +21,20 @@ The repository is organized into four main components:
 
 ### `src/`
 Contains all data processing and modeling scripts:
-- Data processing: `process_usda.py`, `process_prism.py`, `process_drought.py`
+- Data processing: `unzip_prism.py`, `process_usda.py`, `process_prism.py`, `process_drought.py`
 - Data merging: `merge_final_data.py`
-- Models: `model_linear.py`, `model_random_forest`, `model_gradient_boosting`
+- Models: `model_linear.py`, `model_random_forest`, `model_gradient_boosting`, `model_gp_additional.py`
 - Feature analysis: `feature_importance.py`
+- Running scripts: `run_all.py`
+- Visualizations: `visualizations.py`
 
 ### `notebooks/`
 - `project_pipeline.ipynb` – prototype pipeline and results, on less data and without feature importance
 - `final_pipeline.ipynb` – preliminary analysis on results 
 
 ### `outputs/`
-- Model metrics, predictions, and feature importance results  
+- Model metrics, predictions, and feature importance results 
+- `visualizations/` -  visualizations used in poster + some extras
 
 ## Project Goal
 
