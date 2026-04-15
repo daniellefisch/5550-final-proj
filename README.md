@@ -97,6 +97,23 @@ Models include:
 - random forest
 - gradient boosting
 
+### Metrics
+
+**Evaluation Metrics**
+
+| Metric | What it Measures | Interpretation | Units | Notes |
+|--------|----------------|----------------|-------|------|
+| R² (R-squared) | Proportion of variance in yield explained by the model | 1 = perfect fit, 0 = no better than mean, <0 = worse than mean | Unitless | Main metric used in this project; highlights transfer failure |
+| RMSE | Average magnitude of prediction error (squared, then rooted) | Lower is better; sensitive to large errors | Bushels per acre | Penalizes large mistakes more heavily |
+| MAE | Average absolute prediction error | Lower is better; easier to interpret than RMSE | Bushels per acre | More robust to outliers than RMSE |
+
+All of the resulting metrics can be found at the end of final_pipeline.ipynb
+
+### Results Summary
+
+The results show that climate variables explain a moderate portion of variation in corn yield within regions, with nonlinear models such as Random Forest and Gradient Boosting achieving R² values of approximately 0.20–0.35 and consistently outperforming linear regression. Including drought variables slightly improves within-region performance, but does not improve, and in some cases slightly worsens, performance under transfer. However, when models are applied across regions, performance declines sharply: most transfer scenarios result in negative R² values, indicating that models perform worse than predicting the mean. Transfer from the Great Plains to the Corn Belt performs somewhat better than the reverse, with small positive R² values for nonlinear models, but overall generalization remains limited. Feature importance results show that temperature is the most influential predictor in both regions, while precipitation plays a larger role in the Great Plains and drought intensity is more important in the Corn Belt. These patterns demonstrate that both predictive performance and the relative importance of climate variables differ across regions.
+
+
 ### Prototype Pipeline
 
 A simplified prototype was developed to validate the pipeline:
